@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""script that prints the first State object from the database
-hbtn_0e_6_usa"""
+"""script that lists all State objects, and corresponding City
+ objects, contained in the database hbtn_0e_101_usa"""
 from sqlalchemy import (create_engine)
-from model_state import Base, State
-from model_city import Base, City
+from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy.orm import sessionmaker
 import sys
 
@@ -15,6 +15,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for city in session.query(City).join(State).order_by(City.id).all():
-        print("{}: ({}) {}".format(city.state.name, city.id, city.name))
+    result = session.query(State)
+    for st in result:
+        for ct in st.cities:
+            print("{}: {} -> {}".format(ct.id, ct.name, st.name))
     session.close()
