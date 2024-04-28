@@ -1,0 +1,1 @@
+In this project, i learnt how to link two amazing worlds: Databases and Python! In the first part i sed a module called MySQLdb to connect to MySQL database and execute SQL queries. In the second part, i used the module SQLALchemy an Object Relational Mapper(ORM).
