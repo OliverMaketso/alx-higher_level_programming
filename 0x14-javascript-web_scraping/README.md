@@ -1,0 +1,1 @@
+JavaScript web scraping involves using JavaScript to extract data from websites. This process can be done either on the client side (in the browser) or on the server side (using Node.js or other server-side JavaScript environments). Here are the main approaches to JavaScript web scraping:
